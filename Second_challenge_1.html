@@ -7,7 +7,7 @@
       
       </head>
 
-<title>Second Challenge: Info</title>
+<title>Second Challenge: First Problem</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -17,7 +17,7 @@
 .button {
   display: inline-block;
   border-radius: 15px;
-  background-color: #0dd1f3;
+  background-color: #04ad29f6;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -58,21 +58,13 @@
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: url('Background images/Confluente\ station: 1;.jpg');
+  background-image: url('Background images/Confluente_station_1.jpg');
   min-height: 100%;
   background-position: center;
   background-size: cover;
 }
 
-.w3-display-middle {
-  position: absolute;
-  bottom: 0;
-  background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-  color: #f1f1f1;
-  width: 50%;
-  padding: 20px;
-}
+
 
 </style>
 
@@ -82,20 +74,38 @@ body, html {height: 100%}
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
     <a href="home.html" class="w3-bar-item w3-button w3-wide"> <- HackYou</a>
   </div>
-  <div class="w3-display-middle">
-    <h1 class="w3-jumbo w3-animate-top">
-    <h1 style="text-align:center;">Your Second challenge</h1>   
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center">This is your second challenge. You made it till here. WOW! As a second challenge you will have to do something different. You will enter on special virtual environment. This virtual environment consists of a Lab of NASA. You will have to complete a series of 3 exercises in physics that could make the rocket of Confluente came back to earth safely</p>
-    <p style="color: red;font-style: bold;"class="w3-large w3-center">Pay attention. You have a limited time to complete the three problems.</p>
+  <div class="w3-display-left">
     
-    <hr>
-        
-    <h3 style="text-align:center;font-style: italic;" >Good luck and Godspeed:</h3>
-    <br>
+    <p style="position:relative;left:35px;top:130px;color:rgb(12, 247, 12);font-style: bold;">Enter your answer here (one letter or a number):</p>
+    <input type="text" id="test" style="position:relative;left:60px;top:130px;">
+    <input type="button" style="position:relative;left:60px;top:130px;" value="click" onclick="z()"><span style="position:relative;left:70px;top:130px" id="err"></span>
+    
 
-    <div style="text-align:center;"><button class="button" style="vertical-align:middle"><a href="Second_challenge_1.html"><span>Second challenge </span></a></button>
-    </div>
+    <script>
+    function z()
+    {
+    var a=document.getElementById("test");
+    if((a.value=="a")||(a.value=="100"))
+    {
+    document.getElementById('err').innerHTML= 'correct';
+    
+    var codeBlock = ' <div style="position:relative;left:60px;top:130px;"><button class="button" style="vertical-align:middle"><a href="First_challenge.html"><span>Second problem </span></a></button></div>';
+    
+    // Inserting the code block to wrapper element
+    document.getElementById("wrapper").innerHTML = codeBlock
+    
+    }
+    else
+    {
+    document.getElementById('err').innerHTML= 'wrong';
+    
+    }
+    
+    }
+    </script>
+    
+
+    <div id="wrapper"></div>
 
     
 

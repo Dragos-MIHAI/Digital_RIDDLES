@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<HEAD>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdn.rawgit.com/jashkenas/coffeescript/1.11.1/extras/coffee-script.js" type="text/javascript"></script>
+<SCRIPT language="JavaScript">
+<!--hide
+
+var password;
+var pass1="Welcome to the Honors Student Association Confluente Intro Weekend! We hope you will have a lot of fun.";
+
+password=prompt('Please enter your password to access the virtual environment!',' ');
+
+if (password==pass1)
+  alert('Password Correct! Click OK to enter!');
+else
+   {
+    alert('Password incorrect! Returning to Home page');
+    window.location="home.html";
+    }
+
+//-->
+
+
+</SCRIPT>
+
+<script type="text/coffeescript">
+
+  NUM_CONFETTI = 350
+  COLORS = [[85,71,106], [174,61,99], [219,56,83], [244,92,68], [248,182,70]]
+  PI_2 = 2*Math.PI
+  
+  
+  canvas = document.getElementById "world"
+  context = canvas.getContext "2d"
+  window.w = 0
+  window.h = 0
+  
+  resizeWindow = ->
+    window.w = canvas.width = window.innerWidth
+    window.h = canvas.height = window.innerHeight
+  
+  window.addEventListener 'resize', resizeWindow, false
+    
+  window.onload = -> setTimeout resizeWindow, 0
+  
+  range = (a,b) -> (b-a)*Math.random() + a
+  
+  drawCircle = (x,y,r,style) ->
+    context.beginPath()
+    context.arc(x,y,r,0,PI_2,false)
+    context.fillStyle = style
+    context.fill()
+  
+  xpos = 0.5
+  
+  document.onmousemove = (e) ->
+    xpos = e.pageX/w
+  
+  window.requestAnimationFrame = do ->
+    window.requestAnimationFrame       ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame    ||
+    window.oRequestAnimationFrame      ||
+    window.msRequestAnimationFrame     ||
+    (callback) -> window.setTimeout(callback, 1000 / 60)
+  
+  
+  class Confetti
+  
+    constructor: ->
+      @style = COLORS[~~range(0,5)]
+      @rgb = "rgba(#{@style[0]},#{@style[1]},#{@style[2]}"
+      @r = ~~range(2,6)
+      @r2 = 2*@r
+      @replace()
+  
+    replace: ->
+      @opacity = 0
+      @dop = 0.03*range(1,4)
+      @x = range(-@r2,w-@r2)
+      @y = range(-20,h-@r2)
+      @xmax = w-@r
+      @ymax = h-@r
+      @vx = range(0,2)+8*xpos-5
+      @vy = 0.7*@r+range(-1,1)
+  
+    draw: ->
+      @x += @vx
+      @y += @vy
+      @opacity += @dop
+      if @opacity > 1
+        @opacity = 1
+        @dop *= -1
+      @replace() if @opacity < 0 or @y > @ymax
+      if !(0 < @x < @xmax)
+        @x = (@x + @xmax) % @xmax
+      drawCircle(~~@x,~~@y,@r,"#{@rgb},#{@opacity})")
+  
+  
+  confetti = (new Confetti for i in [1..NUM_CONFETTI])
+  
+  window.step = ->
+    requestAnimationFrame(step)
+    context.clearRect(0,0,w,h)
+    c.draw() for c in confetti
+  
+  step()
+
+</script>
+
+</HEAD>
+
+
+
+<html>
+
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="LOGO/favicon.ico" />
+      
+      </head>
+
+<title>First Challenge Completed: Congrats!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+.button {
+  display: inline-block;
+  border-radius: 15px;
+  background-color: #0dd1f3;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('Background images/MAC 2.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.w3-display-middle {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 50%;
+  padding: 20px;
+}
+
+</style>
+
+
+
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <canvas id="world"></canvas>
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    <a href="home.html" class="w3-bar-item w3-button w3-wide"> <- HackYou</a>
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">
+    <h1 style="text-align:center;">Congratulations!!!</h1>   
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">Your first challenge is completed. Two more challenges to go. Keep your strength up and do not forget to have fun.</p>
+    
+    <hr>
+        
+    <h3 style="text-align:center;font-style: italic;color:orange;font-style: bold;" >Please proceed to the next challenge:</h3>
+    <br>
+
+    <div style="text-align:center;"><button class="button" style="vertical-align:middle"><a href="Second_challenge_0.html"><span>Second challenge </span></a></button>
+    </div>
+
+    
+
+
+</div>
+
+  <div class="w3-display-bottomleft w3-padding-large">
+    Powered by <a href="https://www.hsaconfluente.nl/" target="_blank" class="w3-hover-text-orange">H.S.A. Confluente</a>
+  </div>
+
+    
+
+</div>
+
+
+<body>
+   
+
+</body>
+</html>
