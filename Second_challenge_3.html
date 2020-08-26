@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="LOGO/favicon.ico" />
+      
+      </head>
+
+<title>Second Challenge: Second Problem</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+.button {
+  display: inline-block;
+  border-radius: 15px;
+  background-color: #04ad29f6;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('Background images/Confluente_station_3.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+</style>
+
+
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    <a href="home.html" class="w3-bar-item w3-button w3-wide"> <- HackYou</a>
+  </div>
+  <div class="w3-display-left">
+    
+    <p style="position:relative;left:35px;top:130px;color:rgb(12, 247, 12);font-style: bold;">Enter your answer here (value and unit symbol):</p>
+    <input type="text" id="test" style="position:relative;left:60px;top:130px;">
+    <input type="button" style="position:relative;left:60px;top:130px;" value="click" onclick="z()"><span style="position:relative;left:70px;top:130px" id="err"></span>
+    
+
+    <script>
+    function z()
+    {
+    var a=document.getElementById("test");
+    if((a.value=="87minutes")||(a.value=="87 minutes")||(a.value=="87min")||(a.value=="87 min"))
+    {
+    document.getElementById('err').innerHTML= 'correct';
+    
+    var codeBlock = ' <div style="position:relative;left:60px;top:130px;">'
+    + '<button class="button" style="vertical-align:middle"><a href="Third_challenge_info.html"><span>Third challenge </span></a></button>'
+    + '<p style="position:relative;top:-250px;">Congratulations!!! You have finished all the three problems of the second challenge. Here is the password to access the third challenge: XGK6B+\S@d=z_+B@ </p>' 
+    + '</div>';
+    
+    
+    // Inserting the code block to wrapper element
+    document.getElementById("wrapper").innerHTML = codeBlock
+    
+    }
+    else
+    {
+    document.getElementById('err').innerHTML= 'wrong';
+    
+    }
+    
+    }
+    </script>
+    
+
+    <div id="wrapper"></div>
+
+    
+
+
+</div>
+
+  <div class="w3-display-bottomleft w3-padding-large">
+    Powered by <a href="https://www.hsaconfluente.nl/" target="_blank" class="w3-hover-text-light-blue">H.S.A. Confluente</a>
+  </div>
+
+    
+
+</div>
+<body>
+   
+
+</body>
+</html>
