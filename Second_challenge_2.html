@@ -58,7 +58,7 @@
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: url('Background images/Confluente_station_1.jpg');
+  background-image: url('Background images/Confluente_station_2.jpg');
   min-height: 100%;
   background-position: center;
   background-size: cover;
@@ -76,7 +76,7 @@ body, html {height: 100%}
   </div>
   <div class="w3-display-left">
     
-    <p style="position:relative;left:35px;top:130px;color:rgb(12, 247, 12);font-style: bold;">Enter your answer here (one letter or a number):</p>
+    <p style="position:relative;left:35px;top:130px;color:rgb(12, 247, 12);font-style: bold;">Enter your answer here (value and unit symbol):</p>
     <input type="text" id="test" style="position:relative;left:60px;top:130px;">
     <input type="button" style="position:relative;left:60px;top:130px;" value="click" onclick="z()"><span style="position:relative;left:70px;top:130px" id="err"></span>
     
@@ -85,11 +85,11 @@ body, html {height: 100%}
     function z()
     {
     var a=document.getElementById("test");
-    if((a.value=="a")||(a.value=="100"))
+    if((a.value=="516 N")||(a.value=="516N")||(a.value=="516n")||(a.value=="516 n"))
     {
     document.getElementById('err').innerHTML= 'correct';
     
-    var codeBlock = ' <div style="position:relative;left:60px;top:130px;"><button class="button" style="vertical-align:middle"><a href="Second_challenge_2.html"><span>Second problem </span></a></button></div>';
+    var codeBlock = ' <div style="position:relative;left:60px;top:130px;"><button class="button" style="vertical-align:middle"><a href="Second_challenge_3.html"><span>Last problem </span></a></button></div>';
     
     // Inserting the code block to wrapper element
     document.getElementById("wrapper").innerHTML = codeBlock
