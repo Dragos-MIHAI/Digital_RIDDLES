@@ -7,7 +7,7 @@
       
       </head>
 
-<title>Second Challenge: First Problem</title>
+<title>Third Challenge: Third Problem</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -58,7 +58,7 @@
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: url('Background images/festival.jpg');
+  background-image: url('Background images/sunset.jpg');
   min-height: 100%;
   background-position: center;
   background-size: cover;
@@ -86,8 +86,11 @@ body, html {height: 100%}
   
 
   <div class="w3-display-middle">
-    
-    <p style="position:relative;left:120px;top:80px;color:rgb(12, 247, 12);font-style: bold;font-size:30px;">Which are the committees of H.S.A. Confluente? :</p>
+    <p>Click on the picture below. You need to find the approximative (+-5) number of how many confluente logos there are on the picture (pay attention there are two ways: an easy way and a hard way). After that you need to find how many times a certain number is repeating in the image (this will later correspond to the current board number). Lastly, you will need to look for a small sentence that corresponds to the current name of the board. Please enter your answers below:</p>
+    <a href='Background images/challenge_conflu_nb.jpg' download  target="_blank">
+      <img src='Background images/challenge_conflu_nb.jpg' alt="challenge 3, problem 3 picture" width="204" height="142" style="position:relative;left:330px;">
+    </a>
+    <p style="position:relative;left:80px;top:50px;color:rgb(12, 247, 12);font-style: bold;font-size:25px;">What is the number and full name of the current board of Confluente?</p>
   <input type="text" id="test" style="position:relative;left:270px;top:130px;width: 308px;height: 46px;">
   <input type="button" style="position:relative;left:270px;top:130px;width: 50px;height: 46px;" value="click" onclick="z()"><span style="position:relative;left:280px;top:130px;color:white" id="err"></span>
     
@@ -98,11 +101,11 @@ body, html {height: 100%}
     function z()
     {
     var a=document.getElementById("test");
-    if((a.value=="Gala, Web, Intro, PR, Study Trip, Acquisition, Edu and Activity")||(a.value=="Gala, Web, Intro, PR, StudyTrip, Acquisition, Edu and Activity")||(a.value=="gala, web, intro, pr, studytrip, acquisition, edu and activity")||(a.value=="gala, web, intro, pr, study trip, acquisition, edu and activity")||(a.value=="Gala, Web, Intro, PR, Studytrip, Acquisition, Edu and Activity"))
+    if((a.value=="Board 6: Change of Seasons"))
     {
     document.getElementById('err').innerHTML= 'correct';
     
-    var codeBlock = ' <div style="position:relative;left:350px;top:200px;"><button class="button" style="vertical-align:middle"><a href="Third_challenge_3.html"><span>Second problem </span></a></button></div>';
+    var codeBlock = ' <div style="position:relative;left:350px;top:200px;"><button class="button" style="vertical-align:middle"><a href="Third_challenge_4.html"><span>Finish </span></a></button></div>';
     
     // Inserting the code block to wrapper element
     document.getElementById("wrapper").innerHTML = codeBlock
