@@ -23,7 +23,7 @@
   text-align: center;
   font-size: 16px;
   font-weight: bold;
-  padding: 20px;
+  padding: 5px;
   width: 200px;
   transition: all 0.5s;
   cursor: pointer;
@@ -74,11 +74,20 @@ body, html {height: 100%}
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
     <a href="home.html" class="w3-bar-item w3-button w3-wide"> <- HackYou</a>
   </div>
+
+  <div class="w3-display-middle">
+  
+  <p style="position:relative;left:35px;top:175px;color:rgb(12, 247, 12);font-style: bold;">Which screen is displaying the correct logo of H.S.A. Confluente? (left,middle,right) :</p>
+  <input type="text" id="test" style="position:relative;left:170px;top:180px;">
+  <input type="button" style="position:relative;left:170px;top:180px;" value="click" onclick="z()"><span style="position:relative;left:180px;top:180px;color:black" id="err"></span>
+
+</div>
+
   <div class="w3-display-middle">
     
-    <p style="position:relative;left:35px;top:180px;color:rgb(12, 247, 12);font-style: bold;">Which screen is displaying the correct logo of H.S.A. Confluente? (left,middle,right) :</p>
-    <input type="text" id="test" style="position:relative;left:60px;top:180px;">
-    <input type="button" style="position:relative;left:60px;top:180px;" value="click" onclick="z()"><span style="position:relative;left:70px;top:180px" id="err"></span>
+    
+    
+
     
 
     <script>
@@ -89,7 +98,7 @@ body, html {height: 100%}
     {
     document.getElementById('err').innerHTML= 'correct';
     
-    var codeBlock = ' <div style="position:relative;left:60px;top:180px;"><button class="button" style="vertical-align:middle"><a href="Second_challenge_2.html"><span>Second problem </span></a></button></div>';
+    var codeBlock = ' <div style="position:relative;left:0px;top:250px;"><button class="button" style="vertical-align:middle"><a href="Third_challenge_2.html"><span>Second problem </span></a></button></div>';
     
     // Inserting the code block to wrapper element
     document.getElementById("wrapper").innerHTML = codeBlock
